@@ -1,16 +1,17 @@
-   // importing express framework
-    const express = require("express");
+import express from 'express';
+const app = express();
+const port = process.env.PORT || 7000;
 
-    const app = express();
+// GET /hello → responds with a friendly message
+app.get('/hello', (req, res) => {
+  res.json({ message: '👋 Hello, world!' });
+});
 
-    // Respond with "hello world" for requests that hit our root "/"
-    app.get("/", function (req, res) {
-     return res.send("Hello World");
-    });
+// Generic root route
+app.get('/', (req, res) => {
+  res.send('Welcome to Express 5 app!');
+});
 
-    // listen to port 7000 by default
-    app.listen(process.env.PORT || 7000, () => {
-      console.log("Server is running");
-    });
-
-    module.exports = app;
+app.listen(port, () => {
+  console.log(`App listening at http://localhost:${port}`);
+});

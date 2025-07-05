@@ -1,4 +1,11 @@
 {
+  "name": "node-github-demo",
+  "version": "1.0.0",
+  "description": "A Node.js application",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./test/* --exit"
+  },
   "dependencies": {
     "express": "^5.1.0"
   },
@@ -6,7 +13,6 @@
     "mocha": "^11.7.1",
     "supertest": "^7.1.1"
   },
-  "scripts": {
-    "test": "mocha ./test/* --exit"
-  }
+  "type": "module"
 }
+
